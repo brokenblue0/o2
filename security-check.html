@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-left">
+                <img src="o2-logo.png" alt="O2 Logo" class="logo">
+                <a href="#">Personal</a>
+                <a href="#">Business</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Sign in or Register</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="security-section form-container">
+        <div class="security-container" id="securityContainer">
+            <h1>Security Check</h1>
+            <p>We need to send you a code to check that you're supposed to have access to this account. Please enter your mobile number:</p>
+
+            <form id="securityCheckForm">
+                <label for="mobile-number">Mobile Number</label>
+                <input type="text" id="mobile-number" name="mobile-number" required placeholder="Enter your mobile number">
+                <button type="submit">Send Code</button>
+            </form>
+        </div>
+
+        <div class="otp-container" id="otpContainer" style="display: none;">
+            <h1>Security Check</h1>
+            <p>We’ve sent you two texts. The first is a warning message not to give one-time codes to fraudsters pretending to work for O2. 
+                The second is the code you need to continue with your request, which should arrive shortly after the first one. Waited more 
+                than 30 minutes for your code? Ask for another Please enter the code below:</p>
+
+            <form id="otpForm">
+                <label for="otp">Your six digit code</label>
+                <input type="text" id="otp" name="otp" required placeholder="Enter the OTP">
+                <button type="submit">Verify Code</button>
+                <p>If you've not received a code after 10 minutes we can <a href="#">send you another code</a>.</p>
+            </form>
+        </div>
+
+        <aside class="contact-us">
+            <h3>Contact us</h3>
+            <p>For further assistance <a href="#">contact customer services</a>.</p>
+        </aside>
+    </section>
+
+    <script>
+        document.getElementById('securityCheckForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const mobileNumber = document.getElementById('mobile-number').value;
+            if (mobileNumber) {
+                // Simulate sending the code
+                alert(`Code sent to ${mobileNumber}`);
+                // Hide the security check form and show the OTP form
+                document.getElementById('securityContainer').style.display = 'none';
+                document.getElementById('otpContainer').style.display = 'block';
+            } else {
+                alert('Please enter a valid mobile number.');
+            }
+        });
+
+        document.getElementById('otpForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const otp = document.getElementById('otp').value;
+            if (otp) {
+                // Simulate OTP verification
+                alert('OTP verified successfully!');
+                // You can redirect or perform further actions here
+            } else {
+                alert('Please enter the OTP.');
+            }
+        });
+    </script>
+</body>
+</html>

